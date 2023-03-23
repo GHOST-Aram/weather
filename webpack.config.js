@@ -1,5 +1,7 @@
 const path = require('path')
 
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+
 module.exports  = {
     mode: 'development',
     entry: {
@@ -19,5 +21,13 @@ module.exports  = {
         historyApiFallback: true,
         open: true,
         compress: true,
-    }
+    },
+    plugins: [
+        new HtmlWebPackPlugin ({
+            title: 'Weather',
+            filename: 'index.html',
+            template: './src/templates/index.html'
+        })
+    ]
+
 }
