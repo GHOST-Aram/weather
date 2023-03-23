@@ -4,7 +4,9 @@
   "description": "Weather fetches weather data from weather API and diplays int nicely",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "serve": "webpack serve"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/GHOST-Aram/weather/issues"
   },
-  "homepage": "https://github.com/GHOST-Aram/weather#readme"
+  "homepage": "https://github.com/GHOST-Aram/weather#readme",
+  "dependencies": {
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.1"
+  }
 }
