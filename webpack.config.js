@@ -28,6 +28,14 @@ module.exports  = {
             filename: 'index.html',
             template: './src/templates/index.html'
         })
-    ]
+    ],
+    module: {
+        rules: [{
+            test: /.css$/,
+            use: ['style-loader', 'css-loader']
+        }
+        ]
+    },
+    devtool: 'inline-source-map',
 
 }
