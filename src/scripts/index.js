@@ -1,4 +1,5 @@
 import '../styles/styles.css'
+import Displayer from './displayer.js'
 
 //Fetc background Image
 async function fetchBackgroundImage (objectName) {
@@ -49,78 +50,51 @@ async function fetchWeatherData (city) {
             //Format name
             cityName = cityName.charAt(0).toUpperCase().concat(cityName.slice(1).toLowerCase())
 
-            console.log(cityName)
         })
     })
     //City name
 
 
     
-    //Customize Page title
-    const title = document.querySelector('title')
-    title.textContent = title.textContent.concat(`in ${cityName}`)
-
-    //Customize Page heading
-    const heading = document.querySelector('#city-name')
-    heading.textContent = heading.textContent.concat(` ${cityName}`)
     
     
     // Fetch weather data from weather API
     fetchWeatherData(cityName).then(data =>{
         
-
-        //Set general condition
+        //Get general weather condsition
         const condition = data.current.condition.text
-        document.querySelector('#general-condition').textContent = condition
-
         //Fetch background related to general condition
         fetchBackgroundImage(condition)
-
-        //Set Condition Icon
-        const iconUrl = data.current.condition.icon
-        document.querySelector('#weather-icon').src = iconUrl
-
-        //Set temperature in celecius
-        const tempC = data.current.temp_c
-        document.querySelector('#temp-c span').textContent = tempC
         
-        //Set fahrenheit temperature
-        const tempF = data.current.temp_f
-        document.querySelector('#temp-f span').textContent = tempF
+        //Import class
+        import('./displayer.js').then(({default: Displayer}) =>{
+            const displayer = new Displayer ()
 
-        //Set Humidity
-        const humidity = data.current.humidity
-        document.querySelector('#humidity span').textContent = humidity
-        
-        //Set pressure
-        const pressure = data.current.pressure_mb
-        document.querySelector('#pressure span').textContent = pressure
-        
-        //Set cloud
-        const cloud = data.current.cloud
-        document.querySelector('#cloud span').textContent = cloud
+            //Customize titles
+            displayer.cutomizeTitles(cityName)
+            
+            // set condition
+            displayer.displayGeneralCondition (condition)
+    
+    
+            displayer.displayWeatherIcon(data)
+    
+            displayer.displayTemperature(data)
+    
+            displayer.displayHumidity(data)
+            
+            displayer.displayPressure(data)
+            
+            displayer.displayCloudCover(data)
+    
+            displayer.displayUVRadiation(data)
+            
+            displayer.displayWindData(data)
+    
+            displayer.displayPrecipitation(data)
 
-        //Set Uv
-        const uv = data.current.uv
-        document.querySelector('#uv span').textContent = uv
-        
-        //Set Wind direction
-        const windDirection = data.current.wind_dir
-        document.querySelector('#wind-direction span').textContent = windDirection
-        
-        //Set Wind speed
-        const windSpeed = data.current.wind_kph
-        document.querySelector('#wind-speed span').textContent = windSpeed
-
-        //Set Wind degree
-        const windDegree = data.current.wind_degree
-        document.querySelector('#wind-degree span').textContent = windDegree
-
-        //Set Precicpitation
-        const precipitation = data.current.precip_mm
-        document.querySelector('#precipitation span').textContent = precipitation
+        })    
 
     }).catch((error) => console.log(error))
-
 
 
