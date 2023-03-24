@@ -3,3 +3,13 @@
 @tailwind components;
 @tailwind base;
 @tailwind utilities;
+
+.bg-overlay{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+body{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
