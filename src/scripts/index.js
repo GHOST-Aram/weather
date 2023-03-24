@@ -34,6 +34,10 @@ async function fetchWeatherData (city) {
     let cityName = 'Abu dhabi'
 
     window.addEventListener('load', ()=>{
+        //Update footer
+        const footerText = document.querySelector('footer p')
+        footerText.textContent += new Date().getFullYear()
+
         //Get City name 
         const form = document.querySelector('form')
 
