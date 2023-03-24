@@ -5,13 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Weather</title>
-    <script defer src="bundle.ec5b6956909e1f29c04f.js"></script></head>
+    <script defer src="bundle.3db996df0166df10ba9f.js"></script></head>
     <body>
-        <header class="py-8 px-16 w-full bg-gray-900 m-auto text-center relative flex flex-row justify-between items-center">
+        <header class="py-8 px-16 space-y-4 w-full bg-gray-900 m-auto text-center relative flex flex-col justify-between items-center lg:flex-row">
             <h1 class=" text-white text-3xl">Weather in <span id="city-name"></span></h1>
             <!-- Form search -->
-            <form action="" method="get" class="w-2/5 flex flex-row gap-8 items-end">
-                <input type="text" name="search" id="search-city" placeholder="Type city name" class="px-4 py-2 text-white border-b-2 bg-transparent w-full border-slate-500 focus:outline-none">
+            <form action="" method="get" class="w-full flex flex-row gap-8 items-end lg:w-2/5">
+                <input type="text" name="search" id="search-city" required placeholder="Type city name" class="px-4 py-2 text-white border-b-2 bg-transparent w-full border-slate-500 focus:outline-none">
                 <button type="submit" class="bg-orange-900 text-white rounded-md py-2 px-4 hover:bg-orange-500 transition-all">Search</button>
             
             </form>

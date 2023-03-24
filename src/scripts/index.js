@@ -30,13 +30,26 @@ async function fetchWeatherData (city) {
         console.log(` Weather data not found ${error}`)
     }
 }
+    //Default city
+    let cityName = 'Abu dhabi'
 
+    window.addEventListener('load', ()=>{
+        //Get City name 
+        const form = document.querySelector('form')
 
+        //Add even tlistener
+        form.addEventListener('submit', (e) =>{
+            e.preventDefault()
+
+            cityName = document.querySelector('input[type=text]').value.trim()
+            //Format name
+            cityName = cityName.charAt(0).toUpperCase().concat(cityName.slice(1).toLowerCase())
+
+            console.log(cityName)
+        })
+    })
     //City name
-    let cityName = 'kISUMU'
 
-    //Format name
-    cityName = cityName.charAt(0).toUpperCase().concat(cityName.slice(1).toLowerCase())
 
     
     //Customize Page title
