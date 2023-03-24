@@ -32,7 +32,6 @@ async function fetchWeatherData (city) {
         console.log(` Weather data not found ${error}`)
     }
 }
-fetchBackgroundImage('cloudy')
 
 //Weather Icon
 // import('../images/Serengeti_sunset-1001.jpg').then(({default: icon} )=>{
@@ -42,6 +41,14 @@ fetchBackgroundImage('cloudy')
 // Fetch weather data from weather API
 const cityName = 'Kisumu'
 fetchWeatherData(cityName).then(data =>{
+
+    const condition = data.current.condition.text
+    //Set general condition
+    document.querySelector('#general-condition').textContent = condition
+
+    //Fetch background related to general condition
+    fetchBackgroundImage(condition)
+    
     console.log(data)
 
 }).catch((error) => console.log(error))
