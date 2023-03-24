@@ -11,7 +11,7 @@ export default class DataFinder {
             document.body.style.backgroundImage = `url(${dataSet.data.images.original.url})`
             
         } catch (error) {
-            console.log(` Image not found ${error}`)
+            console.error(error)
         }
     }
     async fetchWeatherData (city) {
@@ -23,7 +23,7 @@ export default class DataFinder {
             
             return response
         } catch (error) {
-            console.log(` Weather data not found ${error}`)
+            console.error(error)
         }
     }
 }
