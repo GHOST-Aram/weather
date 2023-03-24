@@ -24,6 +24,7 @@ showWeather(cityName)
             cityName = cityName.charAt(0).toUpperCase().concat(cityName.slice(1).toLowerCase())
 
             //Repeat
+            showWeather(cityName)
 
     
         })
