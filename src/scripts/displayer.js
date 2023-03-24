@@ -1,5 +1,17 @@
 export default class Displayer {
     cutomizeTitles (cityName) {
+        
+        //Format name
+        if(cityName.includes(' ')){
+            //Split-map-join
+            cityName =cityName.split(' ').map(text =>text.charAt(0).toUpperCase().concat(text.slice(1).toLowerCase())).join(' ')
+        } else {
+            cityName = cityName.charAt(0).toUpperCase().concat(cityName.slice(1).toLowerCase())
+        }
+        
+
+
+
         //Customize Page title
         const title = document.querySelector('title')
         title.textContent = title.textContent.concat(`in ${cityName}`)

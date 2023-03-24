@@ -20,9 +20,7 @@ showWeather(cityName)
             e.preventDefault()
     
             cityName = document.querySelector('input[type=text]').value.trim()
-            //Format name
-            cityName = cityName.charAt(0).toUpperCase().concat(cityName.slice(1).toLowerCase())
-
+            
             //Repeat
             showWeather(cityName)
 
