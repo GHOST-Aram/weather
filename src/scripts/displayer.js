@@ -6,7 +6,7 @@ export default class Displayer {
     
         //Customize Page heading
         const heading = document.querySelector('#city-name')
-        heading.textContent = heading.textContent.concat(` ${cityName}`)
+        heading.textContent = cityName
     }
     displayCloudCover (data) {
         //Set cloud
