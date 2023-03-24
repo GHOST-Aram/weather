@@ -7,9 +7,23 @@
 .bg-overlay{
     background-color: rgba(0, 0, 0, 0.8);
 }
+.bg-overlay-2{
+    background-color: rgba(0, 0, 0, 0.2);
+
+}
+.bg-overlay-3{
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
 body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+}
+#line{
+    width: 2px;
+}
+#weather-icon{
+    height: 100px;
 }

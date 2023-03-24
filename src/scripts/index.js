@@ -48,8 +48,50 @@ fetchWeatherData(cityName).then(data =>{
 
     //Fetch background related to general condition
     fetchBackgroundImage(condition)
+
+    //Set Condition Icon
+    const iconUrl = data.current.condition.icon
+    document.querySelector('#weather-icon').src = iconUrl
+
+    //Set temperature in celecius
+    const tempC = data.current.temp_c
+    document.querySelector('#temp-c span').textContent = tempC
     
-    console.log(data)
+    //Set fahrenheit temperature
+    const tempF = data.current.temp_f
+    document.querySelector('#temp-f span').textContent = tempF
+
+    //Set Humidity
+    const humidity = data.current.humidity
+    document.querySelector('#humidity span').textContent = humidity
+    
+    //Set pressure
+    const pressure = data.current.pressure_mb
+    document.querySelector('#pressure span').textContent = pressure
+    
+    //Set cloud
+    const cloud = data.current.cloud
+    document.querySelector('#cloud span').textContent = cloud
+
+    //Set Uv
+    const uv = data.current.uv
+    document.querySelector('#uv span').textContent = uv
+    
+    //Set Wind direction
+    const windDirection = data.current.wind_dir
+    document.querySelector('#wind-direction span').textContent = windDirection
+    
+    //Set Wind speed
+    const windSpeed = data.current.wind_kph
+    document.querySelector('#wind-speed span').textContent = windSpeed
+
+    //Set Wind degree
+    const windDegree = data.current.wind_degree
+    document.querySelector('#wind-degree span').textContent = windDegree
+
+    //Set Precicpitation
+    const precipitation = data.current.precip_mm
+    document.querySelector('#precipitation span').textContent = precipitation
 
 }).catch((error) => console.log(error))
 

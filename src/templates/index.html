@@ -10,19 +10,40 @@
     <header class="py-8 w-full bg-gray-900 m-auto text-center">
         <h1 class=" text-white text-3xl">Weather in <span id="city">Nairobi</span></h1>
     </header>
-    <main class="mt-8 space-y-8">
+    <main class="mt-8 space-y-8 px-16">
         <section>
             <div class="container text-center m-auto bg-overlay p-4 w-3/5 rounded-md">
                 <h1 class=" text-white text-3xl" id="general-condition">General weather Condition</span></h1>
             </div>
         </section>
         <section>
-            <div class="conatiner m-auto text-center bg-overlay-2 rounded-md">
-                <div class="grid grid-cols-2">
-                    <div class="flex flex-row items-strect justify-start">
-                        <img src="" alt="" id="weather-icon" class="rounded-sm w-full">
-                        <h1 class="text-5xl text-orange-600 font-medium">21<span>&#8451</span></h1>
+            <div class="container m-auto text-center px-8 bg-overlay-2 rounded-md py-4">
+                <div class="flex flex-row items-stretch justify-center">
+                    <div class="flex flex-row items-center justify-end px-8 w-2/5">
+                        <img src="" alt="" id="weather-icon" class="rounded-sm">
+                        <h1 class="text-5xl text-orange-600 font-medium" id="temp-c"><span class="px-2"></span>&#8451;</h1>
                     </div>
+                    <div class="bg-slate-500" id="line"></div>
+                    <div class="px-8 py-4 w-2/5 flex flex-col items-start space-y-4">
+                        <h1 class="text-xl text-slate-800 font-medium" id="temp-f">Fahrenheit :<span class="px-2 mx-2 text-white bg-orange-900"></span>&#8457;</h1>
+                        <h1 class="text-xl text-slate-800 font-medium" id="humidity">Humidity :<span class="px-2 mx-2 text-white bg-orange-900"></span>g/&#13221;</h1>
+                        <h1 class="text-xl text-slate-800 font-medium" id="pressure">Pressure :<span class="px-2 mx-2 text-white bg-orange-900"></span>mbar</h1>
+                    </div>
+                </div>
+                <div class="flex flex-row items-center justify-between py-8">
+                    <div class="space-y-4 bg-overlay-3 text-start p-4 rounded-md">
+                        <h1 class="text-xl text-slate-300 font-medium" id="cloud">Cloud cover :<span class="px-2 mx-2 text-white bg-orange-900"></span>&percnt;</h1>
+                        <h1 class="text-xl text-slate-300 font-medium" id="uv">UV Radiation :<span class="px-2 mx-2 text-white bg-orange-900"></span>mW/cm2</h1>
+                    </div>
+                    <div class="space-y-4 bg-overlay-3 text-start p-4 rounded-md">
+                        <h1 class="text-xl text-slate-300 font-medium" id="wind-speed">Wind Speed :<span class="px-2 mx-2 text-white bg-orange-900"></span>kph</h1>
+                        <h1 class="text-xl text-slate-300 font-medium" id="wind-direction">Wind Direction :<span class="px-2 mx-2 text-white bg-orange-900"></span></h1>
+                    </div>
+                    <div class="space-y-4 bg-overlay-3 text-start p-4 rounded-md">
+                        <h1 class="text-xl text-slate-300 font-medium" id="wind-degree">Wind Degree :<span class="px-2 mx-2 text-white bg-orange-900"></span>degrees</h1>
+                        <h1 class="text-xl text-slate-300 font-medium" id="precipitation">Precipitation :<span class="px-2 mx-2 text-white bg-orange-900"></span>mm</h1>
+                    </div>
+
                 </div>
             </div>
         </section>
