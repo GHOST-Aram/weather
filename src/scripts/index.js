@@ -31,16 +31,12 @@ async function fetchWeatherData (city) {
     }
 }
 
-//Weather Icon
-// import('../images/Serengeti_sunset-1001.jpg').then(({default: icon} )=>{
-    //     document.querySelector('#weather-icon').src = icon
-    // }).catch((error)=>console.log(error))
-    
+
     //City name
-    let cityName = 'kisumu'
+    let cityName = 'kISUMU'
 
     //Format name
-    cityName = cityName.charAt(0).toUpperCase().concat(cityName.slice(1))
+    cityName = cityName.charAt(0).toUpperCase().concat(cityName.slice(1).toLowerCase())
 
     
     //Customize Page title
