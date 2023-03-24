@@ -17,4 +17,34 @@ async function fetchBackgroundImage (objectName) {
         console.log(` Image not found ${error}`)
     }
 }
-fetchBackgroundImage('windy')
+async function fetchWeatherData (city) {
+    try {
+        let response = await  fetch(`http://api.weatherapi.com/v1/current.json?key=8b14e702aca64276aaf111022231903&q=${city}&aqi=no`,
+        {mode: 'cors'})
+
+        response = await response.json()
+
+        //
+
+       
+        return response
+    } catch (error) {
+        console.log(` Weather data not found ${error}`)
+    }
+}
+fetchBackgroundImage('cloudy')
+
+//Weather Icon
+// import('../images/Serengeti_sunset-1001.jpg').then(({default: icon} )=>{
+//     document.querySelector('#weather-icon').src = icon
+// }).catch((error)=>console.log(error))
+
+// Fetch weather data from weather API
+const cityName = 'Kisumu'
+fetchWeatherData(cityName).then(data =>{
+    console.log(data)
+
+}).catch((error) => console.log(error))
+
+
+

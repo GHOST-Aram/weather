@@ -11,6 +11,7 @@ module.exports  = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js',
         clean: true,
+
     },
     devServer: {
         static:{
@@ -30,11 +31,17 @@ module.exports  = {
         })
     ],
     module: {
-        rules: [{
+        rules: [
+            {
             test: /.css$/,
             use: ['style-loader', 'css-loader']
+        },
+            {
+            test: /\.(jpg|jpeg|gif|png)$/i,
+            type: 'asset/resource',
         }
-        ]
+        ],
+
     },
     devtool: 'inline-source-map',
 
